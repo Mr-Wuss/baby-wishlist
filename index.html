@@ -79,7 +79,6 @@
             margin-bottom: 50px;
         }
 
-        /* Updated Baby Fund to match item width and styling */
         .baby-fund-link a {
             display: flex;
             align-items: center;
@@ -89,7 +88,7 @@
             color: #d4a59a;
             font-weight: 600;
             text-decoration: none;
-            padding: 35px; /* Matched to item padding */
+            padding: 35px;
             background: linear-gradient(135deg, #fdfbfa 0%, #ffffff 100%);
             border-radius: 20px;
             border: 1px solid #f5e8e4;
@@ -227,7 +226,7 @@
             height: 12px;
             background: #f5e8e4;
             border-radius: 10px;
-            overflow: visible; /* Changed to visible for the moving icon */
+            overflow: visible;
             position: relative;
         }
 
@@ -241,7 +240,7 @@
         /* Dynamic Progress Label (Baby 1) */
         .progress-text-wrapper {
             position: relative;
-            height: 35px; /* Space for the icon */
+            height: 45px; /* Increased height to accommodate larger icon */
             margin-top: 8px;
         }
 
@@ -257,11 +256,22 @@
             transition: left 0.5s ease;
         }
 
+        /* Baby Icon Sizing */
         .baby-icon {
-            height: 1.4em; /* Scaled to Price font size as requested */
             width: auto;
             object-fit: contain;
         }
+
+        /* Baby 1 (Crawling) - 1.6x larger */
+        .baby-icon-progress {
+            height: 2.25em; 
+        }
+
+        /* Baby 2 (Sleeping) - 1.4x larger */
+        .baby-icon-funded {
+            height: 2.0em;
+        }
+
 
         /* Fully Funded Styles (Baby 2) */
         .funded-container {
@@ -276,7 +286,7 @@
             align-items: center;
             gap: 8px;
             background: #e8f5e9;
-            padding: 8px 12px; /* Reduced width */
+            padding: 8px 12px;
             border-radius: 20px;
             max-width: fit-content;
         }
@@ -339,7 +349,9 @@
             .header h1 { font-size: 2.2em; }
             .item { flex-direction: column; align-items: center; text-align: center; }
             .item-image { width: 220px; height: 220px; }
-            .item-details { align-items: center; }
+            /* Fix for mobile visibility */
+            .item-details { align-items: center; width: 100%; }
+            .progress-container { width: 100%; }
         }
     </style>
 </head>
@@ -355,7 +367,7 @@
         </div>
 
         <div class="intro-text">
-            We've created a wishlist of a few special things we'd love for the baby. As we'll be moving soon, we won't be opening gifts at the shower. If you'd like to contribute, there's a baby fund link below — but most of all, we're just grateful to celebrate with you.
+            We’ve put together a small wishlist of special things we’d love to buy for the baby. As we’ll be moving soon, we plan to purchase these once we’re settled in our new home. If you’d like to contribute, there’s a baby fund link below that will go directly toward the items listed — but most of all, we’re simply grateful to celebrate with you.
         </div>
 
         <div class="baby-fund-bubble">
@@ -368,7 +380,7 @@
             <a href="https://www.bugaboo.com/gb-en/bundles/dragonfly/bugaboo-dragonfly-complete-pushchair-bundle-BP20062.html" target="_blank" class="item-link">
                 <div class="item">
                     <div class="item-image">
-                        <img src="Screenshot Bugaboo.jpg" alt="Bugaboo Dragonfly Pushchair Bundle">
+                        <img src="images/Screenshot Bugaboo.jpg" alt="Bugaboo Dragonfly Pushchair Bundle">
                     </div>
                     <div class="item-details">
                         <div class="item-name">Bugaboo Dragonfly Pushchair Bundle</div>
@@ -384,7 +396,7 @@
                                 <div class="checkmark">✓</div>
                                 <span class="funded-text">Fully funded! Thank you!</span>
                             </div>
-                            <img src="Baby 2.jpeg" class="baby-icon" alt="Funded Icon">
+                            <img src="images/Baby 2.jpeg" class="baby-icon baby-icon-funded" alt="Funded Icon">
                         </div>
                     </div>
                 </div>
@@ -393,7 +405,7 @@
             <a href="https://www.maxi-cosi.co.uk/car-seats/pearl-360-pro" target="_blank" class="item-link">
                 <div class="item">
                     <div class="item-image">
-                        <img src="Screenshot Seat.jpg" alt="Maxi-Cosi Pearl 360 Pro">
+                        <img src="images/Screenshot Seat.jpg" alt="Maxi-Cosi Pearl 360 Pro">
                     </div>
                     <div class="item-details">
                         <div class="item-name">Maxi-Cosi Pearl 360 Pro Car Seat</div>
@@ -409,7 +421,7 @@
                                 <div class="checkmark">✓</div>
                                 <span class="funded-text">Fully funded! Thank you!</span>
                             </div>
-                            <img src="Baby 2.jpeg" class="baby-icon" alt="Funded Icon">
+                            <img src="images/Baby 2.jpeg" class="baby-icon baby-icon-funded" alt="Funded Icon">
                         </div>
                     </div>
                 </div>
@@ -427,7 +439,7 @@
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
                             <div class="progress-text-wrapper">
-                                <div class="moving-label" style="left: 0%;">0% <img src="Baby 1.jpeg" class="baby-icon" alt="Baby Icon"></div>
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon baby-icon-progress" alt="Baby Icon"></div>
                             </div>
                         </div>
                     </div>
@@ -446,7 +458,7 @@
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
                             <div class="progress-text-wrapper">
-                                <div class="moving-label" style="left: 0%;">0% <img src="Baby 1.jpeg" class="baby-icon" alt="Baby Icon"></div>
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon baby-icon-progress" alt="Baby Icon"></div>
                             </div>
                         </div>
                     </div>
@@ -465,7 +477,7 @@
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
                             <div class="progress-text-wrapper">
-                                <div class="moving-label" style="left: 0%;">0% <img src="Baby 1.jpeg" class="baby-icon" alt="Baby Icon"></div>
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon baby-icon-progress" alt="Baby Icon"></div>
                             </div>
                         </div>
                     </div>
@@ -475,7 +487,7 @@
             <a href="https://www.stokke.com/GBR/en-gb/high-chairs/stokke-high-chair-bundles/tripp-trapp-highchair-cushion.html" target="_blank" class="item-link">
                 <div class="item">
                     <div class="item-image">
-                        <img src="Screenshot Chair.jpg" alt="Tripp Trapp® High Chair Bundle + Stokke® Tray">
+                        <img src="images/Screenshot Chair.jpg" alt="Tripp Trapp® High Chair Bundle + Stokke® Tray">
                     </div>
                     <div class="item-details">
                         <div class="item-name">Tripp Trapp® High Chair Bundle + Stokke® Tray</div>
@@ -484,7 +496,7 @@
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
                             <div class="progress-text-wrapper">
-                                <div class="moving-label" style="left: 0%;">0% <img src="Baby 1.jpeg" class="baby-icon" alt="Baby Icon"></div>
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon baby-icon-progress" alt="Baby Icon"></div>
                             </div>
                         </div>
                     </div>
@@ -503,7 +515,7 @@
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
                             <div class="progress-text-wrapper">
-                                <div class="moving-label" style="left: 0%;">0% <img src="Baby 1.jpeg" class="baby-icon" alt="Baby Icon"></div>
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon baby-icon-progress" alt="Baby Icon"></div>
                             </div>
                         </div>
                     </div>
