@@ -21,20 +21,6 @@
             position: relative;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(232, 196, 186, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(212, 165, 154, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
         .container {
             position: relative;
             z-index: 1;
@@ -52,7 +38,6 @@
             margin-bottom: 35px;
             padding-bottom: 35px;
             border-bottom: 2px solid #f9e4de;
-            position: relative;
         }
 
         .header h1 {
@@ -66,7 +51,7 @@
 
         .intro-text {
             text-align: center;
-            color: #6a5a5a;
+            color: #6a5a5a; /* Target color for descriptions */
             font-size: 1.05em;
             line-height: 1.7;
             margin-bottom: 30px;
@@ -89,19 +74,10 @@
             background: #d4a59a;
             font-weight: 600;
             text-decoration: none;
-            padding: 35px;
+            padding: 25px; /* Reduced height by ~25% */
             border-radius: 20px;
-            border: 1px solid #d4a59a;
             transition: all 0.4s ease;
             box-shadow: 0 4px 15px rgba(212, 165, 154, 0.3);
-            cursor: pointer;
-        }
-
-        .baby-fund-link a:hover {
-            transform: translateY(-3px);
-            background: #c49080;
-            border-color: #c49080;
-            box-shadow: 0 8px 25px rgba(212, 165, 154, 0.4);
         }
 
         .section-separator {
@@ -131,15 +107,6 @@
             border: 1px solid #f5e8e4;
             transition: all 0.4s ease;
             box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 165, 154, 0.2);
-            border-color: #e8c4ba;
         }
 
         .item-image {
@@ -153,7 +120,6 @@
             justify-content: center;
             overflow: hidden;
             border: 2px solid #f5e8e4;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
         }
 
         .item-image img {
@@ -177,6 +143,13 @@
             font-weight: 600;
         }
 
+        .item-description {
+            color: #6a5a5a; /* Updated to match intro text */
+            font-size: 0.98em;
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
         .item-price {
             font-size: 1.4em;
             color: #d4a59a;
@@ -184,27 +157,31 @@
             font-family: 'Playfair Display', serif;
         }
 
+        /* Progress Bar Fixes */
         .progress-container {
             margin-top: 15px;
-            position: relative;
+            width: 100%;
         }
 
         .progress-bar {
             width: 100%;
             height: 12px;
+            min-height: 12px; /* Ensure visibility on mobile */
             background: #f5e8e4;
             border-radius: 10px;
             position: relative;
+            overflow: hidden;
         }
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #90d4a8, #6bc491);
+            background: linear-gradient(90deg, #90d4a8, #6bc491); /* Standard green */
             border-radius: 10px;
         }
 
         .progress-text-wrapper {
             position: relative;
+            width: 100%; /* Critical for mobile alignment */
             height: 45px;
             margin-top: 8px;
         }
@@ -217,10 +194,19 @@
             font-size: 0.9em;
             color: #8a7a7a;
             white-space: nowrap;
+            transform: translateX(0);
         }
 
         .baby-icon-progress { height: 2.25em; width: auto; }
-        .baby-icon-funded { height: 2.0em; width: auto; }
+        .baby-icon-funded { height: 1.6em; width: auto; } /* Reduced 20% */
+
+        .funded-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+            gap: 15px; /* Space between box and icon on mobile */
+        }
 
         .funded-badge {
             display: inline-flex;
@@ -238,7 +224,6 @@
             aspect-ratio: 1 / 1;
             background: #6bc491;
             border-radius: 50%;
-            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -254,31 +239,12 @@
             line-height: 1.3;
         }
 
-        .funded-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
-
         .footer {
             text-align: center;
             margin-top: 60px;
             padding-top: 35px;
             border-top: 2px solid #f9e4de;
             color: #a08080;
-        }
-
-        .heart {
-            color: #e8b5a8;
-            font-size: 1.6em;
-            display: inline-block;
-            animation: heartbeat 1.5s ease-in-out infinite;
-        }
-
-        @keyframes heartbeat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
         }
 
         @media (max-width: 768px) {
@@ -337,7 +303,7 @@
                         <div class="item-price">£275.00</div>
                         <div class="progress-container">
                             <div class="progress-bar">
-                                <div class="progress-fill" style="width: 35%; background: #4a7c59;"></div>
+                                <div class="progress-fill" style="width: 35%;"></div>
                             </div>
                             <div class="progress-text-wrapper">
                                 <div class="moving-label" style="left: 35%;">35% <img src="images/Baby 1.jpeg" class="baby-icon-progress"></div>
@@ -381,13 +347,13 @@
                 </div>
             </a>
 
-            <a href="https://owletbabycare.co.uk/collections/all-products/products/dream-duo-sock-and-sight" target="_blank" class="item-link">
+            <a href="https://www.eufy.com/uk/products/e8354121?variant=49482873045185" target="_blank" class="item-link">
                 <div class="item">
-                    <div class="item-image"><img src="https://owletbabycare.co.uk/cdn/shop/files/DreamDuo-Mint_01_-_A_Nice_Square_f8011f6e-13f5-43b6-a453-aee37adf5962.jpg?v=1757413237"></div>
+                    <div class="item-image"><img src="https://cdn.shopify.com/s/files/1/0521/3192/2113/files/1_70e44503-490b-4613-81b0-2646f1f2e964.jpg?v=1706509623" alt="eufy Baby Monitor"></div>
                     <div class="item-details">
-                        <div class="item-name">Owlet Dream Duo™ (Sock + Sight)</div>
-                        <div class="item-description">Complete monitoring system combining medically certified Dream Sock® with Dream Sight™ camera.</div>
-                        <div class="item-price">£379.99</div>
+                        <div class="item-name">eufy Baby Monitor E210</div>
+                        <div class="item-description">High-definition video baby monitor with a large 5-inch display. Features 720p resolution, night vision, and whole-room coverage.</div>
+                        <div class="item-price">£149.99</div>
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
                             <div class="progress-text-wrapper">
@@ -398,7 +364,7 @@
                 </div>
             </a>
 
-            <a href="https://www.stokke.com/GBR/en-gb/high-chairs/stokke-high-chair-bundles/tripp-trapp-highchair-tray.html?utm_source=google&utm_medium=paidshopping&utm_content=brand&utm_campaign=shopping_brand_category_product_tripp_trapp_purchase_uk_ao&gad_source=1&gad_campaignid=22825266880&gbraid=0AAAAADmO-D--cNGlFO4Xi3P2KZy4J8sNe&gclid=CjwKCAiA4KfLBhB0EiwAUY7GAQO1gGwe6D0KA0HehUDZg2_ISt7GSBWceKDttCT86aleNoPTJaF0RRoCpW8QAvD_BwE&4285_2=pid%3D428501%26color%3D110&1001_0=pid%3D4952" target="_blank" class="item-link">
+            <a href="https://www.stokke.com/GBR/en-gb/high-chairs/stokke-high-chair-bundles/tripp-trapp-highchair-tray.html" target="_blank" class="item-link">
                 <div class="item">
                     <div class="item-image"><img src="images/Screenshot Chair.jpg"></div>
                     <div class="item-details">
@@ -449,7 +415,7 @@
                 </div>
             </a>
 
-            <a href="https://nunababy.eu/uk/leaf-grow?gad_source=1&gad_campaignid=23129481809&gclid=CjwKCAiA4KfLBhB0EiwAUY7GAUu1lsffrlSmpFMxPjnQ45NSlExrc7-A9HO2nUEGJC-pdcRHmgHrHhoCsbcQAvD_BwE&color_ref=16382" target="_blank" class="item-link">
+            <a href="https://nunababy.eu/uk/leaf-grow" target="_blank" class="item-link">
                 <div class="item">
                     <div class="item-image"><img src="images/Screenshot Bouncer.jpg" alt="Nuna LEAF grow"></div>
                     <div class="item-details">
