@@ -76,7 +76,7 @@
         }
 
         .baby-fund-bubble {
-            margin-bottom: 50px;
+            margin-bottom: 35px;
         }
 
         .baby-fund-link a {
@@ -85,23 +85,29 @@
             justify-content: center;
             font-family: 'Playfair Display', serif;
             font-size: 1.8em;
-            color: #d4a59a;
+            color: white; 
+            background: #d4a59a;
             font-weight: 600;
             text-decoration: none;
             padding: 35px;
-            background: linear-gradient(135deg, #fdfbfa 0%, #ffffff 100%);
             border-radius: 20px;
-            border: 1px solid #f5e8e4;
+            border: 1px solid #d4a59a;
             transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 15px rgba(212, 165, 154, 0.3);
             cursor: pointer;
         }
 
         .baby-fund-link a:hover {
             transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(212, 165, 154, 0.2);
-            border-color: #e8c4ba;
-            color: #c49080;
+            background: #c49080;
+            border-color: #c49080;
+            box-shadow: 0 8px 25px rgba(212, 165, 154, 0.4);
+        }
+
+        .section-separator {
+            border-bottom: 2px solid #f9e4de;
+            margin-bottom: 50px;
+            width: 100%;
         }
 
         .wishlist-items {
@@ -130,26 +136,10 @@
             cursor: pointer;
         }
 
-        .item::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #e8c4ba, transparent);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
         .item:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(212, 165, 154, 0.2);
             border-color: #e8c4ba;
-        }
-
-        .item:hover::before {
-            opacity: 1;
         }
 
         .item-image {
@@ -164,23 +154,12 @@
             overflow: hidden;
             border: 2px solid #f5e8e4;
             box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
-        }
-
-        .item:hover .item-image {
-            transform: scale(1.03);
         }
 
         .item-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-
-        .item-image.momcozy-zoom img {
-            width: 50%;
-            height: 50%;
-            object-fit: contain;
         }
 
         .item-details {
@@ -195,27 +174,16 @@
             font-family: 'Playfair Display', serif;
             font-size: 1.5em;
             color: #5a4a4a;
-            margin-bottom: 5px;
             font-weight: 600;
-            line-height: 1.3;
-        }
-
-        .item-description {
-            color: #8a7a7a;
-            font-size: 0.98em;
-            line-height: 1.6;
-            font-weight: 300;
         }
 
         .item-price {
             font-size: 1.4em;
             color: #d4a59a;
             font-weight: 600;
-            margin-top: 8px;
             font-family: 'Playfair Display', serif;
         }
 
-        /* Progress Bar Styles */
         .progress-container {
             margin-top: 15px;
             position: relative;
@@ -226,7 +194,6 @@
             height: 12px;
             background: #f5e8e4;
             border-radius: 10px;
-            overflow: visible;
             position: relative;
         }
 
@@ -234,13 +201,11 @@
             height: 100%;
             background: linear-gradient(90deg, #90d4a8, #6bc491);
             border-radius: 10px;
-            transition: width 0.5s ease;
         }
 
-        /* Dynamic Progress Label (Baby 1) */
         .progress-text-wrapper {
             position: relative;
-            height: 45px; /* Increased height to accommodate larger icon */
+            height: 45px;
             margin-top: 8px;
         }
 
@@ -251,63 +216,49 @@
             gap: 8px;
             font-size: 0.9em;
             color: #8a7a7a;
-            font-weight: 400;
             white-space: nowrap;
-            transition: left 0.5s ease;
         }
 
-        /* Baby Icon Sizing */
-        .baby-icon {
-            width: auto;
-            object-fit: contain;
-        }
-
-        /* Baby 1 (Crawling) - 1.6x larger */
-        .baby-icon-progress {
-            height: 2.25em; 
-        }
-
-        /* Baby 2 (Sleeping) - 1.4x larger */
-        .baby-icon-funded {
-            height: 2.0em;
-        }
-
-
-        /* Fully Funded Styles (Baby 2) */
-        .funded-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-top: 10px;
-        }
+        .baby-icon-progress { height: 2.25em; width: auto; }
+        .baby-icon-funded { height: 2.0em; width: auto; }
 
         .funded-badge {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             background: #e8f5e9;
-            padding: 8px 12px;
-            border-radius: 20px;
-            max-width: fit-content;
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 220px;
         }
 
         .checkmark {
             width: 20px;
             height: 20px;
+            aspect-ratio: 1 / 1;
             background: #6bc491;
             border-radius: 50%;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .funded-text {
             color: #4a7c59;
             font-weight: 500;
             font-size: 0.85em;
+            line-height: 1.3;
+        }
+
+        .funded-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
         }
 
         .footer {
@@ -316,8 +267,6 @@
             padding-top: 35px;
             border-top: 2px solid #f9e4de;
             color: #a08080;
-            font-size: 1em;
-            position: relative;
         }
 
         .heart {
@@ -332,36 +281,15 @@
             50% { transform: scale(1.1); }
         }
 
-        .corner-flourish {
-            position: absolute;
-            font-size: 50px;
-            color: rgba(232, 196, 186, 0.15);
-            pointer-events: none;
-        }
-
-        .corner-flourish.top-left { top: 20px; left: 20px; }
-        .corner-flourish.top-right { top: 20px; right: 20px; }
-        .corner-flourish.bottom-left { bottom: 20px; left: 20px; }
-        .corner-flourish.bottom-right { bottom: 20px; right: 20px; }
-
         @media (max-width: 768px) {
-            .container { padding: 50px 35px; }
-            .header h1 { font-size: 2.2em; }
+            .container { padding: 50px 25px; }
             .item { flex-direction: column; align-items: center; text-align: center; }
-            .item-image { width: 220px; height: 220px; }
-            /* Fix for mobile visibility */
-            .item-details { align-items: center; width: 100%; }
-            .progress-container { width: 100%; }
+            .item-details { width: 100%; align-items: center; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <span class="corner-flourish top-left">❀</span>
-        <span class="corner-flourish top-right">❀</span>
-        <span class="corner-flourish bottom-left">❀</span>
-        <span class="corner-flourish bottom-right">❀</span>
-
         <div class="header">
             <h1>Our Baby Wishlist</h1>
         </div>
@@ -375,28 +303,26 @@
                 <a href="https://revolut.me/jiaxin_c" target="_blank">Baby Fund</a>
             </div>
         </div>
+        
+        <div class="section-separator"></div>
 
         <div class="wishlist-items">
             <a href="https://www.bugaboo.com/gb-en/bundles/dragonfly/bugaboo-dragonfly-complete-pushchair-bundle-BP20062.html" target="_blank" class="item-link">
                 <div class="item">
-                    <div class="item-image">
-                        <img src="images/Screenshot Bugaboo.jpg" alt="Bugaboo Dragonfly Pushchair Bundle">
-                    </div>
+                    <div class="item-image"><img src="images/Screenshot Bugaboo.jpg"></div>
                     <div class="item-details">
                         <div class="item-name">Bugaboo Dragonfly Pushchair Bundle</div>
-                        <div class="item-description">The most comfortable city pushchair with innovative compact fold. Features patented one-hand fold, full suspension, and includes carrycot, changing bag, footmuff, and rain cover.</div>
+                        <div class="item-description">The most comfortable city pushchair with innovative compact fold. Includes carrycot, changing bag, footmuff, and rain cover.</div>
                         <div class="item-price">£1,145.00</div>
                         <div class="progress-container">
-                            <div class="progress-bar">
-                                <div class="progress-fill" style="width: 100%;"></div>
-                            </div>
+                            <div class="progress-bar"><div class="progress-fill" style="width: 100%;"></div></div>
                         </div>
                         <div class="funded-container">
                             <div class="funded-badge">
                                 <div class="checkmark">✓</div>
-                                <span class="funded-text">Fully funded! Thank you!</span>
+                                <span class="funded-text">Fully funded,<br>Thank you!</span>
                             </div>
-                            <img src="images/Baby 2.jpeg" class="baby-icon baby-icon-funded" alt="Funded Icon">
+                            <img src="images/Baby 2.jpeg" class="baby-icon-funded">
                         </div>
                     </div>
                 </div>
@@ -404,24 +330,18 @@
 
             <a href="https://www.maxi-cosi.co.uk/car-seats/pearl-360-pro" target="_blank" class="item-link">
                 <div class="item">
-                    <div class="item-image">
-                        <img src="images/Screenshot Seat.jpg" alt="Maxi-Cosi Pearl 360 Pro">
-                    </div>
+                    <div class="item-image"><img src="images/Screenshot Seat.jpg"></div>
                     <div class="item-details">
                         <div class="item-name">Maxi-Cosi Pearl 360 Pro Car Seat</div>
-                        <div class="item-description">Revolutionary i-Size car seat with SlideTech™ technology that slides and rotates 360°. Features 5 recline positions, G-CELL Side Impact Protection, suitable from birth to 4 years.</div>
+                        <div class="item-description">Revolutionary i-Size car seat with SlideTech™ technology that slides and rotates 360°. Suitable from birth to 4 years.</div>
                         <div class="item-price">£275.00</div>
                         <div class="progress-container">
                             <div class="progress-bar">
-                                <div class="progress-fill" style="width: 100%;"></div>
+                                <div class="progress-fill" style="width: 35%; background: #4a7c59;"></div>
                             </div>
-                        </div>
-                        <div class="funded-container">
-                            <div class="funded-badge">
-                                <div class="checkmark">✓</div>
-                                <span class="funded-text">Fully funded! Thank you!</span>
+                            <div class="progress-text-wrapper">
+                                <div class="moving-label" style="left: 35%;">35% <img src="images/Baby 1.jpeg" class="baby-icon-progress"></div>
                             </div>
-                            <img src="images/Baby 2.jpeg" class="baby-icon baby-icon-funded" alt="Funded Icon">
                         </div>
                     </div>
                 </div>
@@ -429,17 +349,15 @@
 
             <a href="https://www.stokke.com/GBR/en-gb/nursery/stokke-sleepi/sleepi-bed-bundle.html" target="_blank" class="item-link">
                 <div class="item">
-                    <div class="item-image">
-                        <img src="https://www.stokke.com/dw/image/v2/AAQF_PRD/on/demandware.static/-/Sites-stokke-master-catalog/default/dw7444a6c7/images/inriverimages/mainview/Sleepi-Bed_Natural_Closed_ShWht_5046_eCom.jpg" alt="Stokke Sleepi Bed Bundle">
-                    </div>
+                    <div class="item-image"><img src="https://www.stokke.com/dw/image/v2/AAQF_PRD/on/demandware.static/-/Sites-stokke-master-catalog/default/dw7444a6c7/images/inriverimages/mainview/Sleepi-Bed_Natural_Closed_ShWht_5046_eCom.jpg"></div>
                     <div class="item-details">
                         <div class="item-name">Stokke Sleepi™ Bed Bundle</div>
-                        <div class="item-description">Complete bed bundle including the award-winning Sleepi™ bed, mattress, and fitted sheet. Grows with baby from newborn to 5 years with its unique oval design.</div>
+                        <div class="item-description">Complete bed bundle including the award-winning Sleepi™ bed and mattress. Grows with baby from newborn to 5 years.</div>
                         <div class="item-price">£699.00</div>
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
                             <div class="progress-text-wrapper">
-                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon baby-icon-progress" alt="Baby Icon"></div>
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon-progress"></div>
                             </div>
                         </div>
                     </div>
@@ -448,17 +366,15 @@
 
             <a href="https://uk.momcozy.com/products/momcozy-kleanpal-pro-baby-bottle-washer" target="_blank" class="item-link">
                 <div class="item">
-                    <div class="item-image momcozy-zoom">
-                        <img src="https://momcozy.com/cdn/shop/files/Momcozy_Baby_Bottle_Washer_1.webp?v=1744365965&width=720" alt="Momcozy KleanPal Pro">
-                    </div>
+                    <div class="item-image"><img src="https://momcozy.com/cdn/shop/files/Momcozy_Baby_Bottle_Washer_1.webp?v=1744365965&width=720"></div>
                     <div class="item-details">
                         <div class="item-name">Momcozy KleanPal Pro Baby Bottle Washer</div>
-                        <div class="item-description">All-in-one bottle washing machine that washes, sterilizes, and dries bottles and pump parts. Features 26 spray jets and medical-grade HEPA filter for ultimate hygiene.</div>
+                        <div class="item-description">All-in-one bottle washing machine that washes, sterilizes, and dries bottles and pump parts.</div>
                         <div class="item-price">£299.99</div>
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
                             <div class="progress-text-wrapper">
-                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon baby-icon-progress" alt="Baby Icon"></div>
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon-progress"></div>
                             </div>
                         </div>
                     </div>
@@ -467,36 +383,32 @@
 
             <a href="https://owletbabycare.co.uk/collections/all-products/products/dream-duo-sock-and-sight" target="_blank" class="item-link">
                 <div class="item">
-                    <div class="item-image">
-                        <img src="https://owletbabycare.co.uk/cdn/shop/files/DreamDuo-Mint_01_-_A_Nice_Square_f8011f6e-13f5-43b6-a453-aee37adf5962.jpg?v=1757413237" alt="Owlet Dream Duo">
-                    </div>
+                    <div class="item-image"><img src="https://owletbabycare.co.uk/cdn/shop/files/DreamDuo-Mint_01_-_A_Nice_Square_f8011f6e-13f5-43b6-a453-aee37adf5962.jpg?v=1757413237"></div>
                     <div class="item-details">
                         <div class="item-name">Owlet Dream Duo™ (Sock + Sight)</div>
-                        <div class="item-description">Complete monitoring system combining medically certified Dream Sock® for health tracking with Dream Sight™ camera. Monitors pulse rate, oxygen levels, and streams 2K HD video.</div>
+                        <div class="item-description">Complete monitoring system combining medically certified Dream Sock® with Dream Sight™ camera.</div>
                         <div class="item-price">£379.99</div>
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
                             <div class="progress-text-wrapper">
-                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon baby-icon-progress" alt="Baby Icon"></div>
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon-progress"></div>
                             </div>
                         </div>
                     </div>
                 </div>
             </a>
 
-            <a href="https://www.stokke.com/GBR/en-gb/high-chairs/stokke-high-chair-bundles/tripp-trapp-highchair-cushion.html" target="_blank" class="item-link">
+            <a href="https://www.stokke.com/GBR/en-gb/high-chairs/stokke-high-chair-bundles/tripp-trapp-highchair-tray.html?utm_source=google&utm_medium=paidshopping&utm_content=brand&utm_campaign=shopping_brand_category_product_tripp_trapp_purchase_uk_ao&gad_source=1&gad_campaignid=22825266880&gbraid=0AAAAADmO-D--cNGlFO4Xi3P2KZy4J8sNe&gclid=CjwKCAiA4KfLBhB0EiwAUY7GAQO1gGwe6D0KA0HehUDZg2_ISt7GSBWceKDttCT86aleNoPTJaF0RRoCpW8QAvD_BwE&4285_2=pid%3D428501%26color%3D110&1001_0=pid%3D4952" target="_blank" class="item-link">
                 <div class="item">
-                    <div class="item-image">
-                        <img src="images/Screenshot Chair.jpg" alt="Tripp Trapp® High Chair Bundle + Stokke® Tray">
-                    </div>
+                    <div class="item-image"><img src="images/Screenshot Chair.jpg"></div>
                     <div class="item-details">
                         <div class="item-name">Tripp Trapp® High Chair Bundle + Stokke® Tray</div>
-                        <div class="item-description">A beautifully designed chair that adapts as the baby grows, from infancy to adulthood. Crafted from natural European beech wood with a timeless Scandinavian design.</div>
+                        <div class="item-description">A beautifully designed chair that adapts as the baby grows. Crafted from natural European beech wood.</div>
                         <div class="item-price">£308.00</div>
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
                             <div class="progress-text-wrapper">
-                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon baby-icon-progress" alt="Baby Icon"></div>
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon-progress"></div>
                             </div>
                         </div>
                     </div>
@@ -505,17 +417,49 @@
 
             <a href="https://shop.medela.co.uk/products/breast-pumps/medela-freestyle-hands-free-double-electric-wearable-breast-pump/" target="_blank" class="item-link">
                 <div class="item">
-                    <div class="item-image">
-                        <img src="https://shop.medela.co.uk/wp-content/uploads/2022/11/MED_Freestyle-Hands-free_Main_backup-600x600.jpg" alt="Medela Freestyle Hands Free">
-                    </div>
+                    <div class="item-image"><img src="https://shop.medela.co.uk/wp-content/uploads/2022/11/MED_Freestyle-Hands-free_Main_backup-600x600.jpg"></div>
                     <div class="item-details">
                         <div class="item-name">Medela Freestyle™ Hands Free Pump</div>
-                        <div class="item-description">Ultra-lightweight wearable double electric breast pump. Features 2-Phase Expression™ technology for comfortable, hands-free bottle-feeding preparation.</div>
+                        <div class="item-description">Ultra-lightweight wearable double electric breast pump for comfortable, hands-free prep.</div>
                         <div class="item-price">£299.99</div>
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
                             <div class="progress-text-wrapper">
-                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon baby-icon-progress" alt="Baby Icon"></div>
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://www.ikea.com/gb/en/p/aelskvaerd-changing-table-chest-of-drawers-birch-white-80466679/" target="_blank" class="item-link">
+                <div class="item">
+                    <div class="item-image"><img src="images/Screenshot Table.png" alt="IKEA ÄLSKVÄRD"></div>
+                    <div class="item-details">
+                        <div class="item-name">IKEA ÄLSKVÄRD Changing Table / Chest</div>
+                        <div class="item-description">A stylish changing table that transitions into a beautiful chest of drawers as your baby grows. Made of durable birch.</div>
+                        <div class="item-price">£199.00</div>
+                        <div class="progress-container">
+                            <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+                            <div class="progress-text-wrapper">
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon-progress"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a href="https://nunababy.eu/uk/leaf-grow?gad_source=1&gad_campaignid=23129481809&gclid=CjwKCAiA4KfLBhB0EiwAUY7GAUu1lsffrlSmpFMxPjnQ45NSlExrc7-A9HO2nUEGJC-pdcRHmgHrHhoCsbcQAvD_BwE&color_ref=16382" target="_blank" class="item-link">
+                <div class="item">
+                    <div class="item-image"><img src="images/Screenshot Bouncer.png" alt="Nuna LEAF grow"></div>
+                    <div class="item-details">
+                        <div class="item-name">Nuna LEAF™ grow Baby Rocker</div>
+                        <div class="item-description">A gentle nudge starts the LEAF grow swaying. Its unique motorless design is the most natural way for baby to relax.</div>
+                        <div class="item-price">£250.00</div>
+                        <div class="progress-container">
+                            <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
+                            <div class="progress-text-wrapper">
+                                <div class="moving-label" style="left: 0%;">0% <img src="images/Baby 1.jpeg" class="baby-icon-progress"></div>
                             </div>
                         </div>
                     </div>
