@@ -51,7 +51,7 @@
 
         .intro-text {
             text-align: center;
-            color: #6a5a5a; /* Target color for descriptions */
+            color: #6a5a5a;
             font-size: 1.05em;
             line-height: 1.7;
             margin-bottom: 30px;
@@ -64,6 +64,7 @@
             margin-bottom: 35px;
         }
 
+        /* Reduced height of Baby Fund box by ~25% */
         .baby-fund-link a {
             display: flex;
             align-items: center;
@@ -74,7 +75,7 @@
             background: #d4a59a;
             font-weight: 600;
             text-decoration: none;
-            padding: 25px; /* Reduced height by ~25% */
+            padding: 22px; 
             border-radius: 20px;
             transition: all 0.4s ease;
             box-shadow: 0 4px 15px rgba(212, 165, 154, 0.3);
@@ -106,7 +107,6 @@
             border-radius: 20px;
             border: 1px solid #f5e8e4;
             transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
         }
 
         .item-image {
@@ -143,8 +143,9 @@
             font-weight: 600;
         }
 
+        /* Description font color matches intro text */
         .item-description {
-            color: #6a5a5a; /* Updated to match intro text */
+            color: #6a5a5a;
             font-size: 0.98em;
             line-height: 1.6;
             font-weight: 300;
@@ -157,17 +158,18 @@
             font-family: 'Playfair Display', serif;
         }
 
-        /* Progress Bar Fixes */
+        /* Progress Bar Styling */
         .progress-container {
             margin-top: 15px;
             width: 100%;
+            display: block; /* Ensures proper layout on mobile */
         }
 
         .progress-bar {
             width: 100%;
             height: 12px;
-            min-height: 12px; /* Ensure visibility on mobile */
-            background: #f5e8e4;
+            min-height: 12px;
+            background: #f5e8e4; /* Light pink for remaining portion */
             border-radius: 10px;
             position: relative;
             overflow: hidden;
@@ -175,17 +177,20 @@
 
         .progress-fill {
             height: 100%;
-            background: linear-gradient(90deg, #90d4a8, #6bc491); /* Standard green */
+            /* All green portions now use the same gradient */
+            background: linear-gradient(90deg, #90d4a8, #6bc491);
             border-radius: 10px;
         }
 
         .progress-text-wrapper {
             position: relative;
-            width: 100%; /* Critical for mobile alignment */
+            width: 100%;
             height: 45px;
             margin-top: 8px;
+            display: block;
         }
 
+        /* Fixed positioning for labels on mobile */
         .moving-label {
             position: absolute;
             display: flex;
@@ -194,18 +199,22 @@
             font-size: 0.9em;
             color: #8a7a7a;
             white-space: nowrap;
-            transform: translateX(0);
         }
 
         .baby-icon-progress { height: 2.25em; width: auto; }
-        .baby-icon-funded { height: 1.6em; width: auto; } /* Reduced 20% */
+        
+        /* Baby 2 reduced by 20% */
+        .baby-icon-funded { 
+            height: 1.6em; 
+            width: auto; 
+            margin-left: 15px; /* Added space between badge and icon */
+        }
 
         .funded-container {
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: flex-start; /* Kept to the left for better grouping */
             margin-top: 10px;
-            gap: 15px; /* Space between box and icon on mobile */
         }
 
         .funded-badge {
@@ -215,7 +224,7 @@
             background: #e8f5e9;
             padding: 10px 15px;
             border-radius: 18px;
-            max-width: 220px;
+            max-width: 180px; /* Further reduced width */
         }
 
         .checkmark {
@@ -224,19 +233,20 @@
             aspect-ratio: 1 / 1;
             background: #6bc491;
             border-radius: 50%;
+            flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             font-weight: bold;
-            font-size: 12px;
+            font-size: 11px;
         }
 
         .funded-text {
             color: #4a7c59;
             font-weight: 500;
-            font-size: 0.85em;
-            line-height: 1.3;
+            font-size: 0.82em;
+            line-height: 1.2;
         }
 
         .footer {
@@ -251,6 +261,7 @@
             .container { padding: 50px 25px; }
             .item { flex-direction: column; align-items: center; text-align: center; }
             .item-details { width: 100%; align-items: center; }
+            .funded-container { justify-content: center; }
         }
     </style>
 </head>
@@ -349,10 +360,10 @@
 
             <a href="https://www.eufy.com/uk/products/e8354121?variant=49482873045185" target="_blank" class="item-link">
                 <div class="item">
-                    <div class="item-image"><img src="https://cdn.shopify.com/s/files/1/0521/3192/2113/files/1_70e44503-490b-4613-81b0-2646f1f2e964.jpg?v=1706509623" alt="eufy Baby Monitor"></div>
+                    <div class="item-image"><img src="images/Screenshot Monitor.jpg"></div>
                     <div class="item-details">
                         <div class="item-name">eufy Baby Monitor E210</div>
-                        <div class="item-description">High-definition video baby monitor with a large 5-inch display. Features 720p resolution, night vision, and whole-room coverage.</div>
+                        <div class="item-description">Reliable 720p video baby monitor with a 5" screen and whole-room pan and tilt. Includes smart alerts and long battery life.</div>
                         <div class="item-price">£149.99</div>
                         <div class="progress-container">
                             <div class="progress-bar"><div class="progress-fill" style="width: 0%;"></div></div>
@@ -400,7 +411,7 @@
 
             <a href="https://www.ikea.com/gb/en/p/aelskvaerd-changing-table-chest-of-drawers-birch-white-80466679/" target="_blank" class="item-link">
                 <div class="item">
-                    <div class="item-image"><img src="images/Screenshot Table.jpg" alt="IKEA ÄLSKVÄRD"></div>
+                    <div class="item-image"><img src="images/Screenshot Table.jpg"></div>
                     <div class="item-details">
                         <div class="item-name">IKEA ÄLSKVÄRD Changing Table / Chest</div>
                         <div class="item-description">A stylish changing table that transitions into a beautiful chest of drawers as your baby grows. Made of durable birch.</div>
@@ -417,7 +428,7 @@
 
             <a href="https://nunababy.eu/uk/leaf-grow" target="_blank" class="item-link">
                 <div class="item">
-                    <div class="item-image"><img src="images/Screenshot Bouncer.jpg" alt="Nuna LEAF grow"></div>
+                    <div class="item-image"><img src="images/Screenshot Bouncer.jpg"></div>
                     <div class="item-details">
                         <div class="item-name">Nuna LEAF™ grow Baby Rocker</div>
                         <div class="item-description">A gentle nudge starts the LEAF grow swaying. Its unique motorless design is the most natural way for baby to relax.</div>
